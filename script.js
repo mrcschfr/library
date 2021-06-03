@@ -104,7 +104,7 @@ function showAddDialog(event) {
 }
 
 function removeBook(event) {
-    let index = event.target.parentElement.getAttribute('data-index');
+    let index = event.target.parentElement.parentElement.getAttribute('data-index');
     myLibrary.splice(index, 1);
     displayBooks();
 }

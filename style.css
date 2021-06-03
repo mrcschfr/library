@@ -40,23 +40,17 @@ html {
 }
 
 /* We're taking a mobile-first approach */
-/*
+
 @media (min-width: 576px) {
     html {
         font-size: 16px;
     }
 }
-*/
 
 h1 {
-    font-size: var(--heading-1);
+    font-size: var(--xtra-big-ass-heading);
     font-family: var(--font-family-emphasis), serif;
     text-align: center;
-}
-
-h2 {
-    font-size: var(--heading-2);
-    font-family: var(--font-family-emphasis), serif;
 }
 
 .container {
@@ -82,7 +76,7 @@ h2 {
     background-color: var(--primary-color-light);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
     overflow: hidden;
-    transition: all 1000ms cubic-bezier(0.2, 1.24, 1, 1);
+    transition: max-height 1000ms cubic-bezier(0.2, 1.24, 1, 1), padding 1000ms cubic-bezier(0.2, 1.24, 1, 1);
 }
 
 .entry form {
@@ -132,6 +126,7 @@ h2 {
 
 .entry button:hover {
     background-color: var(--secondary-color-dark);
+    cursor: pointer;
 }
 
 .hint {
@@ -170,6 +165,7 @@ h2 {
 #show-hide:hover {
     transform: scale(1.1);
     background-color: var(--secondary-color-dark);
+    cursor: pointer;
 }
 
 .turned {
@@ -204,7 +200,6 @@ h2 {
     width: 300px;
 }
 
-
 .second-row-container {
     display: flex;
     flex-direction: row;
@@ -233,7 +228,7 @@ h2 {
 .author > span:nth-child(2),
 .pages > span:nth-child(2) {
     font-weight: 600;
-    font-family: var(--font-family-emphasis);
+   
 }
 
 .pages > span {
@@ -259,7 +254,7 @@ h2 {
     padding: 20px;
     background-color: var(--primary-color-light);
     font-family: var(--font-family-emphasis), serif;
-    font-size: var(--heading-2);
+    font-size: var(--heading-3);
     overflow-y: auto;
 }
 
@@ -279,4 +274,8 @@ h2 {
     margin: 0px;
     padding: 0px;
     color: var(--secondary-color);
+}
+
+.remove:hover {
+    cursor: pointer;
 }
