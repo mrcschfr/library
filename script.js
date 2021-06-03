@@ -36,12 +36,14 @@ function init() {
     });
 
     document.getElementById('show-hide').addEventListener('click', showAddDialog);
+    document.getElementById('sign-up').addEventListener('click', displaySignUpDialog);
+    document.getElementById('sign-in').addEventListener('click', displaySignInDialog);
 }
 
 function addSampleBook() {
     addBook(`You Don't Know JS Yet: Get Started`, 'Kyle Simpson', 143, false);
     addBook(`You Don't Know JS Yet: Scope & Closures`, 'Kyle Simpson', 279, false);
-    addBook(`Lokal Digital Unschlagbar: Wie Sie Ihr Unternehmen mit digitalem Marketing vor Ort an die Spitze führen`, 'Patrick Hünemohr', 256, true);
+    addBook(`JavaScript: The Good Parts`, 'Douglas Crockford', 170, true);
 }
 
 function addBook(title, author, pages, hasRead) {
@@ -229,3 +231,10 @@ function displayBooks() {
     document.querySelector('.list').appendChild(domElemAnchor);
 }
 
+function displaySignUpDialog() {
+    alert('sign up');
+}
+
+function displaySignInDialog() {
+    alert('sign in');
+}

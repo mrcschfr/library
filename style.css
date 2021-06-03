@@ -51,6 +51,7 @@ h1 {
     font-size: var(--xtra-big-ass-heading);
     font-family: var(--font-family-emphasis), serif;
     text-align: center;
+    margin: 5px 0px;
 }
 
 .container {
@@ -65,15 +66,30 @@ h1 {
 .header {
     padding: 25px 0px;
     background-color: var(--lightest-background);
+    display: flex;
+    flex-direction: column;
 }
 
-.header div {
-    text-align: right;
-    margin-right: 25px;
+nav {
+    align-self: flex-end;
 }
 
-.header div:hover {
+nav ul {
+    list-style: none;
+    margin: 0px 10px;
+}
+
+nav ul li {
+    margin: 5px;
+    display: inline-block;
+}
+
+nav ul li:hover {
     cursor: pointer;
+}
+
+.header h1 {
+    align-self: center;
 }
 
 /* ENTRY FORM */
