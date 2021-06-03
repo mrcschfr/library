@@ -13,6 +13,7 @@
     <body>
         <div class="container">
             <div class="header">
+                <div>Sign in</div>
                 <h1>The Odin Library</h1>
             </div>
             <div class="entry hidden">
@@ -46,7 +47,29 @@
             </div>
             <div class="list">
             </div>
+            <div class="footer">
+                <a href="https://github.com/mrcschfr"><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" /></a>
+            </div>
         </div>
         <script src="script.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyDpPjJl8r9EKdT14BhMbS8tAjbdJxyZ1FY",
+                authDomain: "library-mrcschfr.firebaseapp.com",
+                projectId: "library-mrcschfr",
+                storageBucket: "library-mrcschfr.appspot.com",
+                messagingSenderId: "488576306134",
+                appId: "1:488576306134:web:8b05ca1344c7ef15c77277"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
     </body>
 </html>
