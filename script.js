@@ -11,9 +11,6 @@ Book.prototype.toggleRead = function() {
     this.hasRead = !this.hasRead;
 }
 
-//addBook('The Hobbit', 'J.R.R. Tolkien', 295, false);
-//addBook('Lord of the Rings', 'J.R.R. Tolkien', 4999, true);
-
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
@@ -29,21 +26,17 @@ function init() {
         displayBooks();
     });
 
-    document.getElementById('sample-add').addEventListener('click', (event) => {
+    document.getElementById('web-add').addEventListener('click', (event) => {
         clearForm();
-        addSampleBook();
-        displayBooks();
+        console.log('Click handler activated')
+        loadBooks();
+    });
+
+    document.getElementById('web-save').addEventListener('click', (event) => {
+        saveBooks();
     });
 
     document.getElementById('show-hide').addEventListener('click', showAddDialog);
-    document.getElementById('sign-up').addEventListener('click', displaySignUpDialog);
-    document.getElementById('sign-in').addEventListener('click', displaySignInDialog);
-}
-
-function addSampleBook() {
-    addBook(`You Don't Know JS Yet: Get Started`, 'Kyle Simpson', 143, false);
-    addBook(`You Don't Know JS Yet: Scope & Closures`, 'Kyle Simpson', 279, false);
-    addBook(`JavaScript: The Good Parts`, 'Douglas Crockford', 170, true);
 }
 
 function addBook(title, author, pages, hasRead) {
@@ -122,6 +115,30 @@ function updateReadStatus(event) {
     }
 
     event.target.parentElement.querySelector('span').innerText = myLibrary[index].hasRead ? 'Book has been read' : 'Book has not been read';
+}
+
+function loadBooks() {
+    myLibrary = [];
+
+    firebase.database().ref().child('library').get().then(data => { 
+        const books = data.val();
+
+        for (book in books) {
+            addBook(books[book]["title"], books[book]["author"], books[book]["pages"], books[book]["hasRead"]);
+        }
+
+        displayBooks();
+    });
+}
+
+function saveBooks() {
+    let booksJSON = {};
+
+    myLibrary.forEach((book, index) => {
+        booksJSON["book-" + index] = book;
+    });
+
+    firebase.database().ref('library').set(booksJSON);
 }
 
 function displayBooks() {

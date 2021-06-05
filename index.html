@@ -13,15 +13,9 @@
     <body>
         <div class="container">
             <div class="header">
-                <nav>
-                    <ul>
-                        <li id="sign-up">Sign up</li>
-                        <li id="sign-in">Sign in</li>
-                    </ul>
-                </nav>
                 <h1>The Odin Library</h1>
             </div>
-            <div class="entry hidden">
+            <div class="entry">
                     <form id="book-form">
                         <div class="entry--dataset">
                             <input type="text" id="book-title" placeholder="Title">
@@ -42,7 +36,8 @@
                             </label>
                         </div>
                         <button type="button" value="Add book" id="book-add">Add book</button>
-                        <button type="button" value="Add sample" id="sample-add">Add sample</button>
+                        <button type="button" value="Get from web" id="web-add">Load from web</button>
+                        <button type="button" value="Save to web" id="web-save">Save to web</button>
                     </form>          
             </div>
             <div class="divider">
@@ -57,24 +52,23 @@
             </div>
         </div>
         <script src="script.js"></script>
+
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
 
         <script>
             // Your web app's Firebase configuration
-            var firebaseConfig = {
+            var config = {
                 apiKey: "AIzaSyDpPjJl8r9EKdT14BhMbS8tAjbdJxyZ1FY",
                 authDomain: "library-mrcschfr.firebaseapp.com",
-                projectId: "library-mrcschfr",
-                storageBucket: "library-mrcschfr.appspot.com",
-                messagingSenderId: "488576306134",
-                appId: "1:488576306134:web:8b05ca1344c7ef15c77277"
+                databaseURL: "https://library-mrcschfr-default-rtdb.europe-west1.firebasedatabase.app",
+                storageBucket: "library-mrcschfr.appspot.com"
             };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
+            firebase.initializeApp(config);
+      
+            // Get a reference to the database service
+            var database = firebase.database();
         </script>
     </body>
 </html>
