@@ -64,7 +64,7 @@ h1 {
 /* HEADER */
 
 .header {
-    padding: 25px 0px;
+    padding: 50px 0px;
     background-color: var(--lightest-background);
     display: flex;
     flex-direction: column;
